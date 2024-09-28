@@ -51,14 +51,22 @@ document.getElementById("register").addEventListener("click", function() {
 
         for (var i = 0; i < arrayOfDataObj.length; i++) {
             if (emailGet === arrayOfDataObj[i].email && password === arrayOfDataObj[i].password) {
-                alert("Login successful!!");
+                Swal.fire({
+                    title: "Login Successfully!",
+                    text: "Thank you!",
+                    icon: "success"
+                  });
                 loginSuccessful = true;
                 break;
             }
         }
 
         if (!loginSuccessful) {
-            alert("Login failed. Incorrect email or password.");
+            Swal.fire({
+                title: "Wrong credentials",
+                text: "Please enter the right values",
+                icon: "error"
+              });
         }
     });
 });
